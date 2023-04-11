@@ -9,7 +9,7 @@
 {% block body %}
     <h1>Name: {{ article_name }}</h1>
     <h1>Text: {{ article_text }}</h1>
-    <h1>Author: <a href="{{url_for('user.get_user',pk=article_author_id)}}">{{ article_author }}</a></h1>
+    <h1>Author: <a href="{{url_for('user.profile',pk=article_author_id)}}">{{ article_author }}</a></h1>
         
 {% endblock body %}
     
