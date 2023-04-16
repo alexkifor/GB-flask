@@ -18,6 +18,6 @@ def init_db():
 def create_users():
     from blog.models import User
     db.session.add(
-        User(email='user_1@email.com', password=generate_password_hash('test123'))
+        User(email='user_1@email.com', password=generate_password_hash('test123'),name='Alexander', is_staff=True)
     )
     db.session.commit()
