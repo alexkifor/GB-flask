@@ -7,6 +7,7 @@ from blog.user.views import user
 from blog.article.views import article
 from blog.auth.views import auth
 from blog.index.views import index
+from blog.author.views import author
 
 
 
@@ -15,6 +16,7 @@ VIEWS = [
     index,
     article,
     auth,
+    author,
 ]
 
 cfg_name = os.environ.get('CONFIG_NAME')
