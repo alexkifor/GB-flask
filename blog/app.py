@@ -1,5 +1,6 @@
 import os
 from blog.extension import db, login_manager, migrate, csrf
+from blog import commands
 from blog.models import User
 
 from flask import Flask
@@ -26,6 +27,7 @@ def create_app() -> Flask:
     app.config.from_object(f"blog.config.{cfg_name}")
     register_extensions(app)
     register_blueprints(app)
+    register_commands(app)
     return app
 
 def register_extensions(app):
@@ -44,3 +46,8 @@ def register_extensions(app):
 def register_blueprints(app: Flask):
     for view in VIEWS:
         app.register_blueprint(view)
+
+
+def register_commands(app: Flask):
+    app.cli.add_command(commands.create_users)
+    app.cli.add_command(commands.create_init_tags)
