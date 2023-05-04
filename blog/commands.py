@@ -4,11 +4,11 @@ from werkzeug.security import generate_password_hash
 from blog.extension import db
 
 
-@click.command('create_users')
-def create_users():
+@click.command('create_admin')
+def create_admin():
     from blog.models import User
     db.session.add(
-        User(email='user_1@email.com', password=generate_password_hash('test123'),name='Alexander', is_staff=True)
+        User(email='user_admin@email.com', password=generate_password_hash('1234'),first_name='admin', last_name='admin', is_staff=True)
     )
     db.session.commit()
 
