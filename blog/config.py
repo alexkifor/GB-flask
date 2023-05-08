@@ -12,6 +12,10 @@ class DevConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
     FLASK_ADMIN_SWATCH = 'solar'
+    OPENAPI_URL_PREFIX = '/api/docs'
+    OPENAPI_VERSION = '3.0.0'
+    OPENAPI_SWAGGER_UI_PATH = '/'
+    OPENAPI_SWAGGER_UI_VERSION = '3.51.1'
     
 
 

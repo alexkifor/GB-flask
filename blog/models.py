@@ -30,7 +30,7 @@ class User(db.Model, UserMixin):
     def __str__(self):
         return f'{self.user.email} ({self.user.id})'
 
-    def __init__(self, email, first_name, last_name, password, is_staff):
+    def __init__(self, email, first_name, last_name, password, is_staff=False):
         self.email = email
         self.first_name = first_name
         self.last_name = last_name
