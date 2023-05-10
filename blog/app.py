@@ -1,5 +1,7 @@
 import os
 from combojsonapi.spec import ApiSpecPlugin
+from combojsonapi.event import EventPlugin
+from combojsonapi.permission import PermissionPlugin
 from blog.extension import db, login_manager, migrate, csrf, admin, api
 from blog import commands
 from blog.models import User
@@ -38,6 +40,8 @@ def register_extensions(app):
     csrf.init_app(app)
     admin.init_app(app)
     api.plugins = [
+        EventPlugin(),
+        PermissionPlugin(),
         ApiSpecPlugin(
             app=app,
             tags={
