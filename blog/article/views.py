@@ -8,6 +8,7 @@ from blog.models import Article, Author, Tag
 from blog.forms.article import CreateArticleForm
 from blog.extension import db
 from werkzeug.exceptions import NotFound
+import os
 
 
 article = Blueprint('article', __name__, url_prefix='/articles', static_folder='../static')
@@ -16,7 +17,7 @@ article = Blueprint('article', __name__, url_prefix='/articles', static_folder='
 @article.route('/', methods=['GET'])
 def article_list():
     articles: Article = Article.query.all()
-    count_articles: Dict = requests.get('http://127.0.0.1:5000/api/articles/event_get_count/').json()
+    count_articles: Dict = requests.get(f"{os.environ.get('API_URI')}/api/articles/event_get_count/").json()
     return render_template(
         'articles/list.html',
         articles=articles,
