@@ -1,3 +1,5 @@
+import requests
+from typing import Dict
 from flask import Blueprint, render_template,redirect, url_for
 from flask_login import login_required, current_user
 from flask import request
@@ -14,9 +16,11 @@ article = Blueprint('article', __name__, url_prefix='/articles', static_folder='
 @article.route('/', methods=['GET'])
 def article_list():
     articles: Article = Article.query.all()
+    count_articles: Dict = requests.get('http://127.0.0.1:5000/api/articles/event_get_count/').json()
     return render_template(
         'articles/list.html',
         articles=articles,
+        count_articles=count_articles['count'],
     )
 
 

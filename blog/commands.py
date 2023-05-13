@@ -16,7 +16,7 @@ def create_admin():
         )
         db.session.commit()
 
-@click.command('create-init-tags')
+@click.command('create_init_tags')
 def create_init_tags():
     from blog.models import Tag
     from wsgi import app
