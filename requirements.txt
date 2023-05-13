@@ -1,4 +1,5 @@
 Flask==1.1.4
+markupsafe==2.0.1
 Werkzeug==0.16.1
 python-dotenv==0.17.1
 click==7.1.2
