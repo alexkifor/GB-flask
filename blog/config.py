@@ -17,6 +17,7 @@ class DevConfig(BaseConfig):
     OPENAPI_SWAGGER_UI_PATH = '/'
     OPENAPI_SWAGGER_UI_VERSION = '3.51.1'
     
+    
 
 
 class TestingConfig(BaseConfig):
