@@ -4,6 +4,7 @@ Werkzeug==0.16.1
 python-dotenv==0.17.1
 click==7.1.2
 Flask-SQLAlchemy==2.5.1
+SQLAlchemy===1.4.17
 Flask-Login==0.6.2
 Flask-Migrate==3.0.0
 psycopg2-binary==2.8.6
