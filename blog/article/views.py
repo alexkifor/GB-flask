@@ -21,7 +21,7 @@ def article_list():
     return render_template(
         'articles/list.html',
         articles=articles,
-        # count_articles=count_articles['count'],
+        count_articles=count_articles['count'],
      )
 
 
